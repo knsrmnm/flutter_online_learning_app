@@ -1,6 +1,8 @@
 # flutter_online_learning_app
 
-A new Flutter project.
+Flutter Online Learning Application UI.
+
+<img width="200" alt="screenshot" src="/assets/screenshot/onlinelearning.png">
 
 ## Getting Started
 
