@@ -58,6 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 BarChartSample3(),
                 const SizedBox(height: 30.0),
                 Text("For You", style: TextStyle(fontWeight: FontWeight.w700)),
+                const SizedBox(height: 20.0),
+                _makeForYouCard("Machine Learning", "ibm.png", size.width),
+                const SizedBox(height: 10.0),
+                _makeForYouCard("Deep Learning", "google.png", size.width),
+                const SizedBox(height: 10.0),
+                _makeForYouCard("Applied Data Science", "microsoft.png", size.width),
               ],
             ),
           ),
@@ -154,6 +160,35 @@ Widget _makeCourseCard(String title, Color color, double width, double progress)
           ),
         ],
       )
+    ),
+  );
+}
+
+/// Make for you card widget.
+Widget _makeForYouCard(String title, String image, double width) {
+  return Container(
+    height: 75.0,
+    width: width,
+    decoration: BoxDecoration(
+      color: Colors.grey[100],
+      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+    ),
+    child: Padding(
+      padding: EdgeInsets.all(15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600, color: Colors.grey[800])),
+              const SizedBox(height: 5.0),
+              Text("20k+ subscribers.", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey[600])),
+            ],
+          ),
+          Image.asset("assets/images/"+image, width: 30.0),
+        ],
+      ),
     ),
   );
 }
